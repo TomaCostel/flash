@@ -24,8 +24,8 @@ public class Dog {
 		System.out.println("animalul bea");
 	}
 
-	public boolean getsIsSleeping() {
-		if (makeNoise == true) {
+	public boolean isSleeping() {
+		if (this.makeNoise == true) {
 			System.out.println("animalul nu doarme");
 			return false;
 		} else {
@@ -39,13 +39,15 @@ public class Dog {
 		
 	}
 
-	String getName() {
+	public String getName() {
 		System.out.println("Numele cainelui e:  " + name);
 		return name;
 	}
-
+	public void setName(String nume) {
+		this.name=nume.toUpperCase();
+	}
 	public boolean isPlaying() {
-		boolean x = getsIsSleeping();
+		boolean x = isSleeping();
 		if (x == true) {
 			return false;
 		}

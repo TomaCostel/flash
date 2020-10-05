@@ -2,20 +2,23 @@ package animalute;
 
 public class Cat {
 
-	int noOfFeet;
-	String countryOfOrigin;
-	String color;
-	String name;
+	private int noOfFeet;
+	private String countryOfOrigin;
+	private String color;
+	private String name;
 	
-	void eat() {
+	
+	
+	static void eat() {
 		System.out.println("animalul manca");
 	}
-	void drink() {
+	static void drink() {
 		System.out.println("animalul bea");
 	}
 	
-	void toarce() {
+	static void toarce() {
 		System.out.println("pisica toarce");
+	
 	}
 	
 }
