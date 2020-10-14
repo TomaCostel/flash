@@ -1,11 +1,13 @@
 package animalute;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Vietuitoare {
 
 	private int noOfFeet;
 	private String countryOfOrigin;
 	private String color;
 	private String name;
+
+	
 
 	void makeNoise(boolean makeNoise) {
 		System.out.println("miau  miau");
@@ -46,6 +48,12 @@ public class Cat extends Animal {
 	static void toarce() {
 		System.out.println("pisica toarce");
 
+	}
+
+	@Override
+	public void respira() {
+		
+		
 	}
 
 }
