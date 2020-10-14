@@ -1,16 +1,28 @@
 package animalute;
 
-public class Animal {
+public abstract  class Animal {
 
-	public static final boolean HAS_PEDIGREE = true;
 	private String name;
 	static String planeta;
 	private int noOfFeet;
 	private String countryOfOrigin;
 	private boolean merge;
+	private String color;
 
 	private Type type;
 	private Type2 type2;
+
+	abstract void makeNoise(boolean makeNoise);
+		
+	
+	public String getColor() {
+		System.out.println("culoarea este " + color);
+		return color;
+	}
+
+	public void setColor(String culoare) {
+		this.color = culoare;
+	}
 
 	public Type getType() {
 		return type;
