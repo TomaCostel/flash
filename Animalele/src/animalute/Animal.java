@@ -1,6 +1,9 @@
 package animalute;
 
-public abstract  class Animal {
+import enums.AnimalType;
+
+
+public abstract class Animal {
 
 	private String name;
 	static String planeta;
@@ -8,13 +11,12 @@ public abstract  class Animal {
 	private String countryOfOrigin;
 	private boolean merge;
 	private String color;
-
 	private Type type;
 	private Type2 type2;
-
-	abstract void makeNoise(boolean makeNoise);
-		
+	private AnimalType tipAnimal;
 	
+	abstract void makeNoise(boolean makeNoise);
+
 	public String getColor() {
 		System.out.println("culoarea este " + color);
 		return color;
@@ -88,14 +90,6 @@ public abstract  class Animal {
 		this.name = nume;
 		nume = "Ezikiel";
 		System.out.println(name + "--");
-	}
-
-	static void eat() {
-		System.out.println("animalul manaca");
-	}
-
-	static void eat(int a) {
-		System.out.println("animalul manaca");
 	}
 
 	static void drink() {

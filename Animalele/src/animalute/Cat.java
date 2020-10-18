@@ -8,7 +8,7 @@ public class Cat extends Animal implements Vietuitoare {
 	private String name;
 
 	
-
+	@Override
 	void makeNoise(boolean makeNoise) {
 		System.out.println("miau  miau");
 	}
@@ -54,6 +54,12 @@ public class Cat extends Animal implements Vietuitoare {
 	public void respira() {
 		
 		
+	}
+
+	@Override
+	public boolean hasKids() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
