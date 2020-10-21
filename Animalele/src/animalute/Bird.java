@@ -13,7 +13,8 @@ public abstract class Bird implements Vietuitoare {
 	private boolean ciupeste;
 	private AnimalType tipAnimal;
 	private Size marimeaAnimal;
-
+	private boolean childFriendly;
+	
 	public boolean migreazaInAlteTari() {
 		if (this.tipAnimal == tipAnimal.SALBATIC && this.age < 8) {
 			return true;
@@ -21,7 +22,23 @@ public abstract class Bird implements Vietuitoare {
 			return false;
 
 	}
-
+	public boolean isChildFriendly() {
+		return childFriendly;
+	}
+	public void setChildFriendly(boolean childFriendly) {
+		this.childFriendly = childFriendly;
+	}
+	public void whichIsChildFriendly(Bird p,Bird p1) {
+	
+		
+		if(p.isChildFriendly()==true) {
+			System.out.println(p);
+		}
+		else if(p1.isChildFriendly()==true) {
+			System.out.println(p1);
+		}
+	}
+	
 	Bird() {
 
 	}
