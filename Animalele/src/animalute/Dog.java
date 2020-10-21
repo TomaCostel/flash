@@ -9,6 +9,10 @@ public  class Dog extends Animal {
 	void makeNoise(boolean makeNoise) {
 		System.out.println("ham ham ");
 	}
+	Dog(String caine){
+		caine="Baumi";
+	}
+	
 	@Override
 	public boolean isSleeping() {
 

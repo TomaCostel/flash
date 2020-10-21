@@ -7,7 +7,9 @@ public class Cat extends Animal implements Vietuitoare {
 	private String color;
 	private String name;
 
-	
+	Cat(String nume){
+		nume="Catira";
+	}
 	@Override
 	void makeNoise(boolean makeNoise) {
 		System.out.println("miau  miau");

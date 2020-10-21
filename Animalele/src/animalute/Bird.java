@@ -15,6 +15,9 @@ public abstract class Bird implements Vietuitoare {
 	private Size marimeaAnimal;
 	private boolean childFriendly;
 	
+	Bird(String nume){
+		nume="Eusari";
+	}
 	public boolean migreazaInAlteTari() {
 		if (this.tipAnimal == tipAnimal.SALBATIC && this.age < 8) {
 			return true;
