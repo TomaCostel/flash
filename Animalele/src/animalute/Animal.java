@@ -1,6 +1,8 @@
 package animalute;
 
 import enums.AnimalType;
+import enums.Type;
+import enums.Type2;
 
 
 public abstract class Animal {
@@ -12,6 +14,15 @@ public abstract class Animal {
 	private boolean merge;
 	private String color;
 	private Type type;
+	
+	public AnimalType getTipAnimal() {
+		return tipAnimal;
+	}
+
+	public void setTipAnimal(AnimalType tipAnimal) {
+		this.tipAnimal = tipAnimal;
+	}
+
 	private Type2 type2;
 	private AnimalType tipAnimal;
 	
@@ -76,7 +87,7 @@ public abstract class Animal {
 	}
 
 	Animal() {
-		name = "Huanito";
+		this.name = "Huanito";
 	}
 
 	Animal(String nume, int numarDePicioare) {

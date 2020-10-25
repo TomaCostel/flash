@@ -1,12 +1,16 @@
 package animalute;
 
+import interfete.Vietuitoare;
+
 public class Cat extends Animal implements Vietuitoare {
 
 	private int noOfFeet;
 	private String countryOfOrigin;
 	private String color;
 	private String name;
-
+	public void eat(int a) {
+		
+	}
 	Cat(String nume){
 		nume="Catira";
 	}

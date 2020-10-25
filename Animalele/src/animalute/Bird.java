@@ -2,8 +2,9 @@ package animalute;
 
 import enums.AnimalType;
 import enums.Size;
+import interfete.Vietuitoare;
 
-public abstract class Bird implements Vietuitoare {
+public class Bird implements Vietuitoare {
 
 	private boolean canFly;
 	private String name;
@@ -14,34 +15,35 @@ public abstract class Bird implements Vietuitoare {
 	private AnimalType tipAnimal;
 	private Size marimeaAnimal;
 	private boolean childFriendly;
-	
-	Bird(String nume){
-		nume="Eusari";
+
+	Bird(String nume) {
+		nume = "Eusari";
 	}
+
 	public boolean migreazaInAlteTari() {
-		if (this.tipAnimal == tipAnimal.SALBATIC && this.age < 8) {
+		if (this.tipAnimal == AnimalType.SALBATIC && this.age < 8) {
 			return true;
-		} else
+		} else {
 			return false;
 
+		}
 	}
+
 	public boolean isChildFriendly() {
 		return childFriendly;
 	}
+
 	public void setChildFriendly(boolean childFriendly) {
 		this.childFriendly = childFriendly;
 	}
-	public void whichIsChildFriendly(Bird p,Bird p1) {
-	
-		
-		if(p.isChildFriendly()==true) {
-			System.out.println(p);
-		}
-		else if(p1.isChildFriendly()==true) {
-			System.out.println(p1);
+
+	public void whichIsChildFriendly(Bird p) {
+
+		if (this.ciupeste == false && (this.marimeaAnimal==Size.SMALL || this.marimeaAnimal==Size.MEDIUM)) {
+			System.out.println("Pasarea"+this.name);
 		}
 	}
-	
+
 	Bird() {
 
 	}
@@ -98,6 +100,24 @@ public abstract class Bird implements Vietuitoare {
 
 	public void setCiupeste(boolean ciupeste) {
 		this.ciupeste = ciupeste;
+	}
+
+	@Override
+	public void respira() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void eat(int a) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean hasKids() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

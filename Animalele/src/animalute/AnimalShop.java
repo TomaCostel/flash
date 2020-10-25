@@ -9,11 +9,11 @@ public class AnimalShop {
 	private Bird bird1;
 	private Bird bird2;
 
-	public void showAnimalForSale(String numeleAnimalului) {
-		System.out.println(dog1);
-		System.out.println(cat);
-		System.out.println(bird1);
-		System.out.println(bird2);
+	public void showAnimalForSale() {
+		System.out.println(this.dog1.getName());
+		System.out.println(this.cat.getName());
+		System.out.println(this.bird1.getName());
+		System.out.println(this.bird2.getName());
 	}
 	AnimalShop(String shopName,String location){
 		this.shopName=shopName;
