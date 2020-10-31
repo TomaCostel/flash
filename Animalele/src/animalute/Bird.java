@@ -4,17 +4,15 @@ import enums.AnimalType;
 import enums.Size;
 import interfete.Vietuitoare;
 
-public class Bird implements Vietuitoare {
+public class Bird extends Animal implements Vietuitoare {
 
 	private boolean canFly;
 	private String name;
 	private int age;
 	private String countryOfOrigin;
-	private String colour;
 	private boolean ciupeste;
 	private AnimalType tipAnimal;
 	private Size marimeaAnimal;
-	private boolean childFriendly;
 
 	Bird(String nume) {
 		nume = "Eusari";
@@ -29,18 +27,16 @@ public class Bird implements Vietuitoare {
 		}
 	}
 
-	public boolean isChildFriendly() {
-		return childFriendly;
-	}
-
-	public void setChildFriendly(boolean childFriendly) {
-		this.childFriendly = childFriendly;
-	}
-
 	public void whichIsChildFriendly(Bird p) {
 
-		if (this.ciupeste == false && (this.marimeaAnimal==Size.SMALL || this.marimeaAnimal==Size.MEDIUM)) {
-			System.out.println("Pasarea"+this.name);
+		if (this.ciupeste == false && (this.marimeaAnimal == Size.SMALL || this.marimeaAnimal == Size.MEDIUM)) {
+			System.out.println("Pasarea" + this.name);
+
+		} else if (p.isCiupeste() == false && this.ciupeste == false) {
+			System.out.println("null");// ca daca pun null nu merge asa ca l -am scris.cred ca trebuia sa pun returnuri
+										// si nu trebuia sa pun void
+		} else if (p.isCiupeste() == true && this.ciupeste == true) {
+			System.out.println(this.ciupeste);
 		}
 	}
 
@@ -48,10 +44,10 @@ public class Bird implements Vietuitoare {
 
 	}
 
-	Bird(String name, int age, String colour) {
+	Bird(String name, int age) {
 		this.name = name;
 		this.age = age;
-		this.colour = colour;
+	
 	}
 
 	public boolean isCanFly() {
@@ -86,13 +82,7 @@ public class Bird implements Vietuitoare {
 		this.countryOfOrigin = countryOfOrigin;
 	}
 
-	public String getColour() {
-		return colour;
-	}
-
-	public void setColour(String colour) {
-		this.colour = colour;
-	}
+	
 
 	public boolean isCiupeste() {
 		return ciupeste;
@@ -118,6 +108,12 @@ public class Bird implements Vietuitoare {
 	public boolean hasKids() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	void makeNoise(boolean makeNoise) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -5,20 +5,32 @@ public class AnimalShop {
 	private String shopName;
 	private String location;
 	private Dog dog1;
+	private Dog dog2;
 	private Cat cat;
 	private Bird bird1;
 	private Bird bird2;
-
+	
 	public void showAnimalForSale() {
 		System.out.println(this.dog1.getName());
+		System.out.println(this.dog2.getName());
 		System.out.println(this.cat.getName());
 		System.out.println(this.bird1.getName());
 		System.out.println(this.bird2.getName());
 	}
-	AnimalShop(String shopName,String location){
-		this.shopName=shopName;
-		this.location=location;
+
+	public Dog getDog2() {
+		return dog2;
 	}
+
+	public void setDog2(Dog dog2) {
+		this.dog2 = dog2;
+	}
+
+	AnimalShop(String shopName, String location) {
+		this.shopName = shopName;
+		this.location = location;
+	}
+
 	public String getShopName() {
 		return shopName;
 	}
