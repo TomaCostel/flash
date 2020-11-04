@@ -9,6 +9,9 @@ public  class Dog extends Animal {
 	void makeNoise(boolean makeNoise) {
 		System.out.println("ham ham ");
 	}
+	Dog(){
+		
+	}
 	Dog(String caine){
 		caine="Baumi";
 	}

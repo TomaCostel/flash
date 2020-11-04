@@ -11,6 +11,9 @@ public class Cat extends Animal implements Vietuitoare {
 	public void eat(int a) {
 		
 	}
+	Cat(){
+		
+	}
 	Cat(String nume){
 		nume="Catira";
 	}

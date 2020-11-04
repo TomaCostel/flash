@@ -19,7 +19,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		System.out.println(HAS_PEDIGREE);
+	/*	System.out.println(HAS_PEDIGREE);
 		Animal.drink();
 		AnimalShop magazinAnimale = new AnimalShop("Relu", "Irlanda");
 		
@@ -27,6 +27,11 @@ public class Main {
 		Bird bird1 = new Bird();
 		Bird pasare = new Bird();
 		Dog dog1=new Dog("nume");
+		
+		Util.afisareNumeAnimalsiVarsta(cat1);
+		Util.afisareNumeAnimalsiVarsta(dog1);
+		Util.afisareNumeAnimalsiVarsta(bird1);
+		
 		
 		
 		bird1.whichIsChildFriendly(pasare);
@@ -46,6 +51,10 @@ public class Main {
 		Parrot papagal2 = new Parrot();
 		Parrot papagal3 = new Parrot();
 		Parrot papagal4 = new Parrot();
+		
+		
+	
+		
 		
 		papagal1.setAge(2);
 		papagal1.setCanFly(false);
@@ -86,8 +95,11 @@ public class Main {
 		papagal4.setGen(AnimalGender.M);
 		papagal4.setRasa("perus");
 		papagal4.setTraiesteInColonie(true);
+		*/
+	//	Util.buyAParrot();
+		System.out.println("-----------------");
+		Util.introduceAnimal();
 		
-		Util.buyAParrot();
 		
 	}
 

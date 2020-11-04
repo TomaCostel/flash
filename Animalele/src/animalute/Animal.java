@@ -4,17 +4,24 @@ import enums.AnimalType;
 import enums.Type;
 import enums.Type2;
 
-
 public abstract class Animal {
 
 	private String name;
-	static String planeta;
 	private int noOfFeet;
 	private String countryOfOrigin;
 	private boolean merge;
 	private String color;
 	private Type type;
-	
+	private int age;
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public AnimalType getTipAnimal() {
 		return tipAnimal;
 	}
@@ -25,7 +32,7 @@ public abstract class Animal {
 
 	private Type2 type2;
 	private AnimalType tipAnimal;
-	
+
 	abstract void makeNoise(boolean makeNoise);
 
 	public String getColor() {
@@ -120,5 +127,8 @@ public abstract class Animal {
 			return true;
 		}
 	}
+
+	
+	
 
 }

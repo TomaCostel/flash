@@ -8,7 +8,7 @@ public class Bird extends Animal implements Vietuitoare {
 
 	private boolean canFly;
 	private String name;
-	private int age;
+
 	private String countryOfOrigin;
 	private boolean ciupeste;
 	private AnimalType tipAnimal;
@@ -19,7 +19,7 @@ public class Bird extends Animal implements Vietuitoare {
 	}
 
 	public boolean migreazaInAlteTari() {
-		if (this.tipAnimal == AnimalType.SALBATIC && this.age < 8) {
+		if (this.tipAnimal == AnimalType.SALBATIC && this.getAge() < 8) {
 			return true;
 		} else {
 			return false;
@@ -46,8 +46,8 @@ public class Bird extends Animal implements Vietuitoare {
 
 	Bird(String name, int age) {
 		this.name = name;
-		this.age = age;
-	
+		this.setAge(age);
+
 	}
 
 	public boolean isCanFly() {
@@ -66,14 +66,6 @@ public class Bird extends Animal implements Vietuitoare {
 		this.name = name;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public String getCountryOfOrigin() {
 		return countryOfOrigin;
 	}
@@ -81,8 +73,6 @@ public class Bird extends Animal implements Vietuitoare {
 	public void setCountryOfOrigin(String countryOfOrigin) {
 		this.countryOfOrigin = countryOfOrigin;
 	}
-
-	
 
 	public boolean isCiupeste() {
 		return ciupeste;
@@ -113,7 +103,7 @@ public class Bird extends Animal implements Vietuitoare {
 	@Override
 	void makeNoise(boolean makeNoise) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
