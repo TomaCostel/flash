@@ -2,6 +2,9 @@ package animalute;
 
 import static animalute.Dog.HAS_PEDIGREE;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import enums.AnimalGender;
 
 public class Main {
@@ -19,7 +22,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-	/*	System.out.println(HAS_PEDIGREE);
+		System.out.println(HAS_PEDIGREE);
 		Animal.drink();
 		AnimalShop magazinAnimale = new AnimalShop("Relu", "Irlanda");
 		
@@ -95,8 +98,24 @@ public class Main {
 		papagal4.setGen(AnimalGender.M);
 		papagal4.setRasa("perus");
 		papagal4.setTraiesteInColonie(true);
-		*/
-	//	Util.buyAParrot();
+	
+	
+		ArrayList<Parrot> listaPapagali=new ArrayList<Parrot>();
+		
+		
+		listaPapagali.add(papagal3);
+		listaPapagali.add(papagal2);
+		listaPapagali.add(papagal1);
+		listaPapagali.add(papagal4);
+		
+		Util.buyAParrot(listaPapagali);
+		Util.afisarePapagali(listaPapagali);
+		System.out.println("inainte de for each");
+		for(Bird c:listaPapagali) {
+			System.out.println(c.getName());
+		}
+		
+		//Util.buyAParrot();
 		System.out.println("-----------------");
 		Util.introduceAnimal();
 		

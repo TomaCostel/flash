@@ -1,10 +1,14 @@
 package animalute;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import enums.AnimalGender;
 
 public class Util {
 
 	static void introduceAnimal() {
+
 		Scanner n = new Scanner(System.in);
 		int flag1 = 0;
 		Animal a = new Cat();
@@ -43,45 +47,87 @@ public class Util {
 
 		a.setAge(varsta);
 		a.setName(nume);
-		System.out.println("varsta animalului este "+afisareNumeAnimalsiVarsta(a));
-		
+		System.out.println("varsta animalului este " + afisareNumeAnimalsiVarsta(a));
+
 	}
-	
 
 	static int afisareNumeAnimalsiVarsta(Animal a) {
 		System.out.println("Numele animalului este-" + a.getName());
 		return a.getAge();
 	}
 
-	static void buyAParrot() {
+	Parrot papagale = new Parrot();
+	Bird pasare = new Bird();
 
-		Scanner marime = new Scanner(System.in);
-		int numar = marime.nextInt();
-		System.out.println("Ce marime doriti sa aiba papagalul?(1-small,2-mediu,3-big");
-		switch (numar) {
-		case 1:
-			System.out.println("1-small" + numar);
-			break;
-		case 2:
-			System.out.println("2-medium" + numar);
-			break;
+	static void buyAParrot(ArrayList<Parrot> listParrot) {
+		int flag3 = 0;
+		int flag2 = 0;
+		do {
+			Scanner s = new Scanner(System.in);
 
-		case 3:
-			System.out.println("3-medium" + numar);
-			break;
-		}
-		System.out.println("Ce culoare doriti sa aiba papagalul");
+			System.out.println("Ce marime doriti sa aiba papagalul?(1-small,2-mediu,3-big");
+			String marime = s.next();
+			System.out.println("Ce culoare doriti sa aiba papagalul");
+			String culoare = s.next();
+			System.out.println("Ce gen doriti sa aiba animalul?");
+			String gen = s.next();
 
-		Scanner culoare = new Scanner(System.in);
-		String colori = culoare.nextLine();
+			for (Parrot p : listParrot) {
+//FAC SA MEARGA .marim.equals
+				if ((p.getMarimeaAnimal()).equals(marime) && p.getColor().equals(culoare) && p.getGen().equals(gen)) {
+					System.out.println("sa gasit un papagal");
+					Parrot.parrotDescription(p);
+					flag3 = 1;
+				}
+			}
+			//verificam daca nu sa gasit papagalul 
+			if (flag3 != 1) {
+				System.out.println("Nu s-a gasit ");
+				System.out.println("doriti sa continuati?");
+				if("da".equalsIgnoreCase(s.next())) {
+					flag2=1;
+				}
+				else {
+					flag2=0;
+				}
+			}
+			
 
-		System.out.println("Ce culoare doriti sa aiba papagalul?");
-		System.out.println(colori);
-
-		Scanner geno = new Scanner(System.in);
-		String genoul = geno.nextLine();
-
-		System.out.println("Ce gen doriti sa aiba animalul?");
-		System.out.println(genoul);
+		} while (flag2 == 1);
 	}
+
+	public static void afisarePapagali(ArrayList<Parrot> parrotList) {
+		System.out.println();
+		int countM = 0;
+		int countF = 0;
+		for (Parrot p : parrotList) {
+			if (AnimalGender.M.equals(p.getGen())) {
+				countM++;
+
+			}
+			if (AnimalGender.F.equals(p.getGen())) {
+				countF++;
+
+			}
+
+		}
+		System.out.println(countM + "<<<rezultatul papagalului mascul");
+		System.out.println(countF + "<<<rezultatul papagalului mascul");
+
+	}
+
+	public void afisareNumeSiVarsta(ArrayList<Animal> listaAnimale) {
+
+		for (Animal a : listaAnimale) {
+			System.out.println("Nume animal=" + a.getName() + "si varsta animal=" + a.getAge());
+			if (a.getName().startsWith("a") || a.getName().startsWith("e") || a.getName().startsWith("i")
+					|| a.getName().startsWith("o") || a.getName().startsWith("u")) {
+				System.out.println("Nume animal=" + a.getName() + "si varsta animal=" + a.getAge());
+			}
+
+		}
+		System.out.println(listaAnimale.size());
+
+	}
+
 }

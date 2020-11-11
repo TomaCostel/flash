@@ -14,6 +14,23 @@ public class Bird extends Animal implements Vietuitoare {
 	private AnimalType tipAnimal;
 	private Size marimeaAnimal;
 
+	
+	public AnimalType getTipAnimal() {
+		return tipAnimal;
+	}
+
+	public void setTipAnimal(AnimalType tipAnimal) {
+		this.tipAnimal = tipAnimal;
+	}
+
+	public Size getMarimeaAnimal() {
+		return marimeaAnimal;
+	}
+
+	public void setMarimeaAnimal(Size marimeaAnimal) {
+		this.marimeaAnimal = marimeaAnimal;
+	}
+
 	Bird(String nume) {
 		nume = "Eusari";
 	}
