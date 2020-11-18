@@ -1,11 +1,35 @@
 package animalute;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import enums.AnimalGender;
 
 public class Util {
+
+	static void findByName(AnimalShop animalShop, String name) {
+		int count = 0;
+
+		for (Parrot b : animalShop.getListaPapagali()) {
+			if (b.getName().equals(name)) {
+				count = count + 1;
+			}
+		}
+		for (Cat c : animalShop.getListaPisici()) {
+			if (c.getName().equals(name)) {
+				count = count + 1;
+			}
+		}
+		for (Dog c : animalShop.getListaCaini()) {
+			if (c.getName().equals(name)) {
+				count = count + 1;
+			}
+		}
+		System.out.println("Au mai ramas ..." + count + "animale");
+
+	}
 
 	static void introduceAnimal() {
 
@@ -74,24 +98,28 @@ public class Util {
 
 			for (Parrot p : listParrot) {
 //FAC SA MEARGA .marim.equals
-				if ((p.getMarimeaAnimal()).equals(marime) && p.getColor().equals(culoare) && p.getGen().equals(gen)) {
+				/*
+				 * if ((p.getMarimeaAnimal()).equals(marime) && p.getColor().equals(culoare) &&
+				 * p.getGen().equals(gen)) { System.out.println("sa gasit un papagal");
+				 * Parrot.parrotDescription(p); flag3 = 1;
+				 */
+				// sper ca merge :D
+				if (marime.equals(p.getMarimeaAnimal()) && culoare.equals(p.getColor()) && gen.equals(p.getGen())) {
 					System.out.println("sa gasit un papagal");
 					Parrot.parrotDescription(p);
 					flag3 = 1;
 				}
 			}
-			//verificam daca nu sa gasit papagalul 
+			// verificam daca nu sa gasit papagalul
 			if (flag3 != 1) {
 				System.out.println("Nu s-a gasit ");
 				System.out.println("doriti sa continuati?");
-				if("da".equalsIgnoreCase(s.next())) {
-					flag2=1;
-				}
-				else {
-					flag2=0;
+				if ("da".equalsIgnoreCase(s.next())) {
+					flag2 = 1;
+				} else {
+					flag2 = 0;
 				}
 			}
-			
 
 		} while (flag2 == 1);
 	}
@@ -118,15 +146,38 @@ public class Util {
 
 	public void afisareNumeSiVarsta(ArrayList<Animal> listaAnimale) {
 
-		for (Animal a : listaAnimale) {
+		listaAnimale.stream().forEach(a -> {
 			System.out.println("Nume animal=" + a.getName() + "si varsta animal=" + a.getAge());
 			if (a.getName().startsWith("a") || a.getName().startsWith("e") || a.getName().startsWith("i")
 					|| a.getName().startsWith("o") || a.getName().startsWith("u")) {
 				System.out.println("Nume animal=" + a.getName() + "si varsta animal=" + a.getAge());
 			}
 
+		});
+
+	}
+
+	public void createShortList(ArrayList<Animal> listaAnimale) {
+
+		List<Animal> listaAnimaleNoua = new ArrayList<Animal>();
+		for (Animal animal : listaAnimale) {
+			if (animal.getName().startsWith("a")) {
+				listaAnimaleNoua.add(animal);
+			}
+
 		}
-		System.out.println(listaAnimale.size());
+
+		listaAnimale.stream().forEach(animal -> {
+			if (animal.getName().startsWith("a")) {
+				listaAnimaleNoua.add(animal);
+			}
+		});
+		listaAnimale.stream().filter(animal -> animal.getName().startsWith("a"))
+				.forEach(element -> listaAnimaleNoua.add(element));
+
+		List<Animal> listaAnimaleNoua2 = new ArrayList<Animal>();
+		listaAnimaleNoua2 = listaAnimale.stream().filter(animal -> animal.getName().startsWith("a"))
+				.collect(Collectors.toList());
 
 	}
 

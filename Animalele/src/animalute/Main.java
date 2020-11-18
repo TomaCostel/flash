@@ -24,7 +24,7 @@ public class Main {
 
 		System.out.println(HAS_PEDIGREE);
 		Animal.drink();
-		AnimalShop magazinAnimale = new AnimalShop("Relu", "Irlanda");
+	//	AnimalShop magazinAnimale = new AnimalShop("Relu", "Irlanda");
 		
 		Cat cat1=new Cat("relu");
 		Bird bird1 = new Bird();
@@ -39,13 +39,13 @@ public class Main {
 		
 		bird1.whichIsChildFriendly(pasare);
 
-		magazinAnimale.setBird1(bird1);
-		magazinAnimale.setBird2(pasare);
-		magazinAnimale.setCat(cat1);
-		magazinAnimale.setDog1(dog1);
-		magazinAnimale.setDog2(dog1);
+//		magazinAnimale.setBird1(bird1);
+	//	magazinAnimale.setBird2(pasare);
+//		magazinAnimale.setCat(cat1);
+//		magazinAnimale.setDog1(dog1);
+	//	magazinAnimale.setDog2(dog1);
 		
-		magazinAnimale.showAnimalForSale();
+//		magazinAnimale.showAnimalForSale();
 
 		
 		boolean b=Main.canBeAdopted(bird1);
