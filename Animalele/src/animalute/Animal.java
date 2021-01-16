@@ -5,7 +5,7 @@ import enums.Type;
 import enums.Type2;
 
 public abstract class Animal {
-
+	private String rasa;
 	private String name;
 	private int noOfFeet;
 	private String countryOfOrigin;
@@ -13,6 +13,14 @@ public abstract class Animal {
 	private String color;
 	private Type type;
 	private int age;
+
+	public String getRasa() {
+		return rasa;
+	}
+
+	public void setRasa(String rasa) {
+		this.rasa = rasa;
+	}
 
 	public int getAge() {
 		return age;
@@ -127,8 +135,5 @@ public abstract class Animal {
 			return true;
 		}
 	}
-
-	
-	
 
 }

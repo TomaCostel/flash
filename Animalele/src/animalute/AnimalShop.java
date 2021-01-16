@@ -23,7 +23,10 @@ public class AnimalShop {
 			numarCaini = numarCaini + 1;
 		}
 		listaCaini.stream().forEach(b -> System.out.println("numele cainelui este" + b.getName()));
+		listaCaini.stream().forEach(b -> {
+			System.out.println("numele cainelui este" + b.getName());
 
+		});
 		for (Cat c : listaPisici) {
 			numarPisici = numarPisici + 1;
 		}

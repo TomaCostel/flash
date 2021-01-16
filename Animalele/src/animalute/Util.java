@@ -1,13 +1,88 @@
 package animalute;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
 import enums.AnimalGender;
 
 public class Util {
+
+	public static void renegociereSalariu(Persoana persoane) {
+		System.out.println("Ce salariu nou doresti sa iti ofer ?");
+		double suma = 0;
+		double suma2=0;
+		HashMap<Persoana, Salariu> listaSalariala = new HashMap<Persoana, Salariu>();
+		for (Map.Entry mapElement : listaSalariala.entrySet()) {
+			suma = suma + ((Salariu) mapElement.getValue()).getValoare();
+		}
+		System.out.println(suma);
+		HashMap<Persoana, Salariu> listaSalariala2 = new HashMap<Persoana, Salariu>();
+		for(Map.Entry mapElement2:listaSalariala2.entrySet()){
+			suma2 = suma2 + ((Salariu) mapElement2.getValue()).getValoare();
+		}
+		if(suma2>suma) {
+			
+			for (Map.Entry mapElement : listaSalariala.entrySet()) {
+				suma = suma + ((Salariu) mapElement.getValue()).getValoare();
+			}
+			System.out.println(suma);
+		}
+	}
+
+	public static void findNameAndShowSalary(HashMap<Persoana, Salariu> listaSalariala, String nume) {
+
+		for (Map.Entry mapElement : listaSalariala.entrySet()) {
+			Persoana p = (Persoana) mapElement.getKey();
+
+			if (p.getNume().equalsIgnoreCase(nume)) {
+
+				Salariu s = (Salariu) mapElement.getValue();
+				System.out.println(s.getValoare());
+			}
+		}
+
+	}
+
+	public static void calculSalarii(HashMap<Persoana, Salariu> listaSalariala) {
+		double suma = 0;
+		for (Map.Entry mapElement : listaSalariala.entrySet()) {
+			suma = suma + ((Salariu) mapElement.getValue()).getValoare();
+		}
+		System.out.println(suma);
+
+	}
+
+	public int getNoOfDogs() {
+		ArrayList<Dog> listaCaini = new ArrayList<Dog>();
+		ArrayList<Cat> listaPisici = new ArrayList<Cat>();
+		ArrayList<Parrot> listaPapagali = new ArrayList<Parrot>();
+		int numarCaini = 0;
+		int numarPisici = 0;
+		int numarPapagali = 0;
+		for (Dog b : listaCaini) {
+			numarCaini = numarCaini + 1;
+			if (numarCaini == 0) {
+				System.out.println("Nu exista nici-un caine :(");
+			}
+		}
+		for (Cat c : listaPisici) {
+			numarPisici = numarPisici + 1;
+			if (numarPisici == 0) {
+				System.out.println("Nu exista nici-o pisica :(");
+			}
+		}
+		for (Parrot b : listaPapagali) {
+			numarPapagali = numarPapagali + 1;
+			if (numarPapagali == 0) {
+				System.out.println("Nu exista nici un papagal :(");
+			}
+		}
+		return numarCaini + numarPapagali + numarPisici;
+	}
 
 	static void findByName(AnimalShop animalShop, String name) {
 		int count = 0;
@@ -166,19 +241,85 @@ public class Util {
 			}
 
 		}
+		listaAnimale.stream().filter(animal -> animal.getName().startsWith("a")).findAny();
 
 		listaAnimale.stream().forEach(animal -> {
 			if (animal.getName().startsWith("a")) {
 				listaAnimaleNoua.add(animal);
-			}
+			} // asta e pentru inceput
 		});
 		listaAnimale.stream().filter(animal -> animal.getName().startsWith("a"))
 				.forEach(element -> listaAnimaleNoua.add(element));
 
-		List<Animal> listaAnimaleNoua2 = new ArrayList<Animal>();
-		listaAnimaleNoua2 = listaAnimale.stream().filter(animal -> animal.getName().startsWith("a"))
-				.collect(Collectors.toList());
+		List<Animal> listaAnimaleNoua2 = listaAnimale.stream().filter(animal -> animal.getName().startsWith("a"))
+				.collect(Collectors.toList());// asta e cea mai folosita
 
 	}
 
+	public static void serchForBuyDogs(ArrayList<AnimalShop> shopList) {
+		System.out.println("Ce animal doriti sa cumparati ");
+		Scanner a = new Scanner(System.in);
+		String animalNume = a.next();
+		int flag10 = 1;
+		do {
+			for (AnimalShop an : shopList) {
+				for (Animal animal : an.getListaPapagali()) {
+					if (animal.getName().equals(animalNume)) {
+						System.out.println("s-a gasit cainele in shopul cu numele" + an.getDetails() + "si adresa.."
+								+ an.getAdress());
+						flag10 = 0;
+					}
+				}
+				for (Animal animal : an.getListaCaini()) {
+					if (animal.getName().equals(animalNume)) {
+						System.out.println("s-a gasit cainele in shopul cu numele" + an.getDetails() + "si adresa.."
+								+ an.getAdress());
+						flag10 = 10;
+					}
+
+				}
+				for (Animal animal : an.getListaPisici()) {
+					if (animal.getName().equals(animalNume)) {
+						System.out.println("s-a gasit cainele in shopul cu numele" + an.getDetails() + "si adresa.."
+								+ an.getAdress());
+						flag10 = 0;
+					}
+
+				}
+			}
+
+		} while (flag10 == 0);
+	}
+
+	public static void searchForDogs(ArrayList<AnimalShop> shopList) {
+		System.out.println("Ce rasa de caine doriti sa aiba cainele ?");
+		Scanner a = new Scanner(System.in);
+		String rasa = a.next();
+		System.out.println("Ce culoare doriti sa aiba cainele");
+		String culoare = a.next();
+		int flag4 = 1;
+		int flag5 = 1;
+		do {
+			deaici: for (AnimalShop an : shopList) {
+				for (Dog df : an.getListaCaini()) {
+					if (df.getRasa().equals(rasa)) {
+						if (df.getColor().equals(culoare)) {
+							System.out.println("s-a gasit cainele in shopul cu numele" + an.getDetails() + "si adresa.."
+									+ an.getAdress());
+							break deaici;
+						}
+					}
+
+				}
+			}
+
+			System.out.println("Doresti oare sa faci o noua cautare?");
+			String raspuns = a.next();
+			if ("nu".equalsIgnoreCase(raspuns)) {
+				break;
+			} else if ("da".equalsIgnoreCase(raspuns)) {
+				flag5 = 0;// I think I gotcha ^-^
+			}
+		} while (flag5 == 0);
+	}
 }
