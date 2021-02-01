@@ -8,15 +8,24 @@ public class Cat extends Animal implements Vietuitoare {
 	private String countryOfOrigin;
 	private String color;
 	private String name;
+
 	public void eat(int a) {
-		
+
 	}
-	Cat(){
-		
+
+	Cat() {
+
 	}
-	Cat(String nume){
-		nume="Catira";
+
+	Cat(String nume) {
+		this.name = nume;
 	}
+
+	Cat(String rasa, String nume) {
+		this.setRasa(rasa);
+		this.name = nume;
+	}
+
 	@Override
 	void makeNoise(boolean makeNoise) {
 		System.out.println("miau  miau");
@@ -61,8 +70,7 @@ public class Cat extends Animal implements Vietuitoare {
 
 	@Override
 	public void respira() {
-		
-		
+
 	}
 
 	@Override

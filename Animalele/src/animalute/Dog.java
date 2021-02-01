@@ -1,21 +1,23 @@
 package animalute;
 
-public  class Dog extends Animal {
+public class Dog extends Animal {
 
 	public static final boolean HAS_PEDIGREE = true;
 
 	private boolean makeNoise;
-	
+
 	void makeNoise(boolean makeNoise) {
 		System.out.println("ham ham ");
 	}
-	Dog(){
-		
+
+	Dog() {
+
 	}
-	Dog(String caine){
-		caine="Baumi";
+
+	Dog(String name) {
+		setName(name);
 	}
-	
+
 	@Override
 	public boolean isSleeping() {
 

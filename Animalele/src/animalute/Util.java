@@ -2,6 +2,7 @@ package animalute;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,21 +12,59 @@ import enums.AnimalGender;
 
 public class Util {
 
+	public static void cautarePisici(HashSet<Cat> listaPisici) {
+		Scanner a = new Scanner(System.in);
+		String nume = a.next();
+		int count = 0;
+		int count2 = 0;
+		for (Cat c : listaPisici) {
+			if (c.getName().equals(nume)) {
+				count++;
+			}
+			if (!c.getName().equals(nume)) {
+				count2++;
+			}
+
+		}
+		System.out.println("numarul de pisici care au acelasi nume este :----" + count);
+		System.out.println("numarul de pisici care nu au acelasi nume este :----" + count2);
+		System.out.println("introduce rasa ");
+		Scanner l = new Scanner(System.in);
+		String rasa = l.next();
+		for (Cat d : listaPisici) {
+			if (d.getRasa().equalsIgnoreCase(rasa)) {
+				System.out.println(d.getRasa());
+			}
+		}
+	}
+
+	public static void calculLitere(HashSet<Dog> listaCaini) {
+		int numar = 7;
+		int counter = 0;
+
+		for (Dog d : listaCaini) {
+			if ((d.getName()).length() == numar) {
+				counter++;
+			}
+		}
+		System.out.println(counter);
+	}
+
 	public static void renegociereSalariu(Persoana persoane) {
 		System.out.println("Ce salariu nou doresti sa iti ofer ?");
 		double suma = 0;
-		double suma2=0;
+		double suma2 = 0;
 		HashMap<Persoana, Salariu> listaSalariala = new HashMap<Persoana, Salariu>();
 		for (Map.Entry mapElement : listaSalariala.entrySet()) {
 			suma = suma + ((Salariu) mapElement.getValue()).getValoare();
 		}
 		System.out.println(suma);
 		HashMap<Persoana, Salariu> listaSalariala2 = new HashMap<Persoana, Salariu>();
-		for(Map.Entry mapElement2:listaSalariala2.entrySet()){
+		for (Map.Entry mapElement2 : listaSalariala2.entrySet()) {
 			suma2 = suma2 + ((Salariu) mapElement2.getValue()).getValoare();
 		}
-		if(suma2>suma) {
-			
+		if (suma2 > suma) {
+
 			for (Map.Entry mapElement : listaSalariala.entrySet()) {
 				suma = suma + ((Salariu) mapElement.getValue()).getValoare();
 			}
