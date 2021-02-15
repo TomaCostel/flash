@@ -14,7 +14,7 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters.LocalDa
 import org.springframework.stereotype.Controller;
 
 @Entity
-@Table(name = "salarii")
+@Table(name = "salariu")
 public class Salariu {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
