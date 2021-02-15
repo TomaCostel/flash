@@ -13,9 +13,9 @@ import first.project.restproject.repository.SalariuRepository;
 public class SalariuService {
 
 	@Autowired
-	private SalariuRepository salariuRepository;
+	private static SalariuRepository salariuRepository;
 
-	public List<Salariu> getAllSalariu() {
+	public static List<Salariu> getAllSalariu() {
 		return salariuRepository.findAll();
 
 	}

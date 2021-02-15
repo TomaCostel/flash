@@ -27,6 +27,15 @@ public class Firma {
 	@Convert(converter = LocalDateConverter.class)
 	private LocalDate dataInfiinitare;
 
+	
+	public Firma(Long id, String name, String location, LocalDate dataInfiinitare) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.location = location;
+		this.dataInfiinitare = dataInfiinitare;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
